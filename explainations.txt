@@ -1,0 +1,81 @@
+Question 01:
+Confirming Inputs: two strings s and t
+
+Test Cases: Test case 1: ("udacity", "ad") | Test case 2: ("udacity", " ") | Test case 3: ("udacity", "so")
+Brainstorm: 
+
+Runtime analysis:
+
+Coding:
+
+Debug:
+
+
+
+
+Question 02:
+Confirming inputs: string a
+
+Test Cases: Test case 1: ("") | Test case 2: ("racecar") | Test case 3: ("udacity")
+
+Brainstorm: 
+
+Runtime analysis:
+
+Coding:
+
+Debug:
+
+
+
+
+
+Question 03:
+Confirming inputs: Undirected Graph G
+
+Test Cases: Input value is not a dictionary/empty, length of G is less than 2 so there is no connection between two nodes
+
+Brainstorm: From the keywords of undirected graph and minimum spanning tree I deduced that I can use the logic behind Kruskal's Minimum Spanning Tree Algorithm. First I need to sort the edges by weight. Then pick the smallest edges one by one but making sure no cycles form
+
+Runtime analysis:
+
+Coding:
+
+Debug:
+
+
+
+
+Question 04:
+Confirming inputs: matrix of tree T, non-negative number representing the root r, non negative integers for two nodes n1 and n2
+
+Test Cases: 
+
+Brainstorm: 
+
+Runtime analysis:
+
+Coding:
+
+Debug:
+
+
+
+
+Question 05:
+Confirming inputs: Link list LL and integer value m for elements from the end of the linked list
+
+Test Cases: 
+
+Brainstorm: 
+
+Runtime analysis:
+
+Coding:
+
+Debug:
+
+
+
+
+
