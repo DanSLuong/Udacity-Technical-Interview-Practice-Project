@@ -14,13 +14,11 @@ def question1(s, t):
     lenS = len(s)
     # Store values of t inside of a list
     sortT = list(t)
-    # Sort list alphabetically
     sortT.sort()
 
     for i in range(lenS - lenT + 1):
         # Store values of s1 inside of a list
         s1 = list(s[i: i+lenT])
-        # Sort list alphabetically
         s1.sort()
         # Compares s1 to s2 and returns the result
         if s1 == sortT:
@@ -192,20 +190,25 @@ def question3(G):
     # Base case: Wrong input type
     if type(G) != dict:
         return "Not a dict. Try again"
-        
-    n = len(G)
-    for i in G:
-        temp[i] = counter
-        newG[counter] = i
-        counter += 1
 
-    # Create the graph for the KruskalMST function to use
-    for i in G:
-        for j in G[i]:
-            u, v, w = temp[i], temp[j[0]], j[1]
-            graph.append([u, v, w])
-    # Return the results of the KruskalMST function
-    return KruskalMST(graph, counter, newG)
+    # Checks length of G    
+    n = len(G)
+    
+    if n < 2:
+        return "There is no connection between two nodes"
+    else: 
+        for i in G:
+            temp[i] = counter
+            newG[counter] = i
+            counter += 1
+
+        # Create the graph for the KruskalMST function to use
+        for i in G:
+            for j in G[i]:
+                u, v, w = temp[i], temp[j[0]], j[1]
+                graph.append([u, v, w])
+        # Return the results of the KruskalMST function
+        return KruskalMST(graph, counter, newG)
 
 
 def main():
@@ -213,6 +216,7 @@ def main():
                      'B': [('A', 2),
                            ('C', 5)],
                      'C': [('B', 5)]})
+    print question3({'A': [('B', 2)]})
     print question3({})
     print question3(12323)
 

@@ -4,11 +4,10 @@ Confirming Inputs: two strings s and t
 Test Cases: Test case 1: ("udacity", "ad") | Test case 2: ("udacity", " ") | Test case 3: ("udacity", "so")
 Brainstorm: 
 
-Runtime analysis:
+Runtime analysis: We use sort which is merge sorting O(nlogn). The space complexity of this should be O(1).
 
-Coding:
+Coding: 
 
-Debug:
 
 
 
@@ -18,13 +17,11 @@ Confirming inputs: string a
 
 Test Cases: Test case 1: ("") | Test case 2: ("racecar") | Test case 3: ("udacity")
 
-Brainstorm: 
+Brainstorm: Need a nested forloop to cycle through the letters in the string. Need to check the length of the subString to figure out which is the longest.
 
-Runtime analysis:
+Runtime analysis: Runtime is O(n^2) because its two forloops. Space Complexity is O(1)
 
-Coding:
-
-Debug:
+Coding: Check if the input is a string. We need a forloop that goes the length of the string and a nested forloop that increments the same range but starts and ends one after the previous forloop and store the values in a subString variable. Check to see if the substring is an palindromic and if it is the longest substring at the moment and storing it in a longest subString array. Return the value of the longestSubString.
 
 
 
