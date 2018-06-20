@@ -1,0 +1,79 @@
+Question 01:
+Confirming Inputs: 	two strings s and t
+
+Test Cases: 		Test case 1: ("udacity", "ad") | Test case 2: ("udacity", " ") | Test case 3: ("udacity", "so")
+
+Brainstorm: 		We need to return a boolean and at least use a forloop to cycle through the first string.
+
+Runtime analysis: 	We use sort which is merge sorting O(nlogn). The space complexity of this should be O(1).
+
+Coding: 		We need the lengths of both strings. Convert string t into a list and sort it. We need a forloop to  cycle through the strings. Create a list that stores a substring of s and sort it. We can then compare the substring to the sorted t string and return the results.
+
+
+
+
+
+Question 02:
+Confirming inputs: 	string a
+
+Test Cases: 		Test case 1: ("") | Test case 2: ("racecar") | Test case 3: ("udacity") | Test case 4: (5651651)
+
+Brainstorm: 		Need a nested forloop to cycle through the letters in the string. Need to check the length of the subString to figure out which is the longest.
+
+Runtime analysis: 	Runtime is O(n^2) because its two forloops. Space Complexity is O(1).
+
+Coding: 		Check if the input is a string. We need a forloop that goes the length of the string and a nested forloop that increments the same range but starts and ends one after the previous forloop and store the values in a subString variable. Check to see if the substring is an palindromic and if it is the longest substring at the moment and storing it in a longest subString array. Return the value of the longestSubString.
+
+
+
+
+
+Question 03:
+Confirming inputs: 	Undirected Graph G
+
+Test Cases: 		Test case 1: ({'A': [('B', 2)], 'B': [('A', 2), ('C', 5)], 'C': [('B', 5)]}) | Test case 2: G is less than 2, no connection between the nodes ({'A': [('B', 2)]})| Test case 3: empty list ({}) | Test case 4: not a dictionary (12323)
+
+Brainstorm: 		From the keywords of undirected graph and minimum spanning tree I deduced that I can use the logic behind Kruskal's Minimum Spanning Tree Algorithm. First I need to sort the edges by weight. Then pick the smallest edges one by one but making sure no cycles form.
+
+Runtime analysis:	Sorting the edges takes O(ElogE) where E is the edge and the find and union operations are aproximately O(logV) where v is the verticies so time complexity is approximately O(ElogE + ElogV). Space complexity is O(1).
+
+Coding:			Create the base cases to check if the input is empty, a dictionary type, or has a length less than 2. If none of the first three cases we need to create the graph so we use a nested forloop to turn G into a graph array. Start to create the functionn to create the minimum spanning tree using Kruskal's algorithm, defined as KruskalMST. Defined the find and union functions as helper functions for creating the tree. In KruskalMST we use a whileloop to find the smallest available edge and check if adding it creates a cycle if not addes it to result[] array. We then use a forloop to store the contents of result into results{} and return results{}.  
+
+
+
+
+
+
+Question 04:
+Confirming inputs: 	Matrix of tree T, non-negative number representing the root r, non negative integers for two nodes n1 and n2
+
+Test Cases: 		Test case 1: ([[0, 1, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [1, 0, 0, 0, 1], [0, 0, 0, 0, 0]], 3, 1,) | Test case 2: Not a tree (3,3,1,4) | Test case 3: Tree is empty ([[]], 3, 1, 4)
+
+Brainstorm: 		Need a Binary Search Tree. Also need to check both the left and right branches of each node to see if the values are bigger or smaller than the root.
+
+Runtime analysis:	Runtime is O(n) because it is determined by the depth of the tree. Space complexity is O(n) because the recursive function in lca extra space is needed in the function call stack.
+
+Coding:			We need to create a Node class for our binary search tree. We then need to create a BinarySearchTree class to store functions for inserting nodes and searching for nodes. We then need to create a function to calculate what the least common ancestor is by comparing the root to n1 and n1.
+
+
+
+
+
+
+Question 05: 
+Confirming inputs: 	Link list LL and integer value m for elements from the end of the linked list
+
+Test Cases: 		Test case 1: question5(head, 3) | Test case 2: question5(head, 5) | Test case 3: question5(head, 1)
+
+Brainstorm: 		We need to create a linked list. we should cycle through the linked list and find where the value is using m.
+
+Runtime analysis: 	O(n log n) and the space time complexity is O(n^2)
+
+Coding: 		First we need to create the LL in the main function using the given Node class. Then we can define the a copy of the LL in two list p1 and p2. Shift each value of p1 over 1 in a forloop with range m to create a empty value at the end. Produce a while loop tha cycles until we get to the empty value in p1 and store the p2.next value into p2 and return the result.
+
+
+
+
+
+
+

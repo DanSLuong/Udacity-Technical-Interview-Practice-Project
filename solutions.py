@@ -28,9 +28,11 @@ def question1(s, t):
 
 def main():
     print question1("udacity", "ad")
+    # Should print True
     print question1("udacity", " ")
+    # Should print False
     print question1("udacity", "so")
-
+    # Should print False
 
 if __name__ == '__main__':
     main()
@@ -46,6 +48,8 @@ def question2(s):
     # Check for string
     if not s:
         return "No value"
+    if type(s) != str:
+        return "Not a string"
     # get the length of the string
     n = len(s)
     longest = 0
@@ -70,10 +74,18 @@ def main():
     # Test cases
     TC1 = "racecar"
     print "Test case 1: " + '"' + TC1 + '"' + " longest palindromic subString: " + question2(TC1)
+    # Should print      Test case 1: "racecar" longest palindromic subString: racecar
     TC2 = ""
     print "Test case 2: " + '"' + TC2 + '"' + " longest palindromic subString: " + question2(TC2)
+    # Should print      Test case 2: "" longest palindromic subString: No value
     TC3 = "udacity"
     print "Test case 3: " + '"' + TC3 + '"' + " longest palindromic subString: " + question2(TC3)
+    # Should print      Test case 3: "udacity" longest palindromic subString: u
+    TC4 = 5651651
+    print "Test case 4: "
+    print question2(TC4)
+    # Should print      Test case 4: 
+    #                   Not a string
 
 
 if __name__ == '__main__':
@@ -216,9 +228,14 @@ def main():
                      'B': [('A', 2),
                            ('C', 5)],
                      'C': [('B', 5)]})
+    # Should print {'A': [('B', 2)], 'C': [('B', 5)]}
     print question3({'A': [('B', 2)]})
+    # Should print There is no connection between two nodes
     print question3({})
+    # Should print List is empty. Try again
     print question3(12323)
+    # Should print Not a dict. Try again
+
 
 if __name__ == '__main__':
     main()
@@ -317,6 +334,12 @@ def lca(r, n1, n2):
 
 
 def question4(T, r, n1, n2):
+    # Base case: not a list
+    if type(T)!=list:
+        return "Not a tree"
+    # Base case: empty tree
+    if T == [[]]:
+        return "Tree is empty"
     BST = BinarySearchTree(r)
     for i in T[r]:
         BST.insert(i)
@@ -338,6 +361,11 @@ def main():
                     3,
                     1,
                     4)
+    # Should print 3
+    print question4(3,3,1,4)
+    # Should print Not a tree
+    print question4([[]],3,1,4)
+    # Should print Tree is empty
 
 
 if __name__ == '__main__':
@@ -366,13 +394,14 @@ def question5(ll, m):
     p1 = ll
     p2 = ll
 
-    # Runs forloop until desired value m
+    # Runs forloop until desired value m to create a empty value
     for i in range(m):
         # Checks to see if ll is empty
         if (p1 == None):
             return None
         # If not empty assign p1.next as the new p1 value
         p1 = p1.next
+    # Runs whileloop until it reaches the empty p1 value
     while (p1 != None):
         p1 = p1.next
         p2 = p2.next
@@ -381,7 +410,7 @@ def question5(ll, m):
 
 
 def main():
-    # Create the BST
+    # Create the LL
     head = Node(10)
     head.next = Node(13)
     head.next.next = Node(2)
@@ -390,10 +419,13 @@ def main():
 
     print "Test case 1: "
     print question5(head, 3)
+    # Should print 2
     print "Test case 2: " 
     print question5(head, 5)
+    # Should print 10
     print "Test case 3: "
     print question5(head, 1)
+    # Should print 69
 
 
 if __name__ == '__main__':
